@@ -9,7 +9,6 @@ const Router = require('./src/app/routes/routes')
     app.use(bodyParser.json({ type: 'application/json' }));
     
     app.use(Router)
-
     app.listen(4000, () => {
         console.log('Servidor rodando na porta 4000...')
     });

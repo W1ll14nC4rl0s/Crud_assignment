@@ -13,3 +13,6 @@ npm run testApi
 para rodar os testes do Banco de dados utilize o comando:
 
 npm run testDb
+
+para somente subir a aplicação 
+npm start
