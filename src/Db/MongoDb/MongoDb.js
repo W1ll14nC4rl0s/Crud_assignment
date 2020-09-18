@@ -28,7 +28,7 @@ class MongoDb extends Crud{
 
         const conn = Mongoose.connection;
         
-        conn.once('open',()=>console.log('DataBase MongoDb standing...'))
+        conn.once('open',()=> true)
        
         return conn
     }
