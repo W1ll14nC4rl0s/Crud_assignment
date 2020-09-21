@@ -20,7 +20,7 @@ describe('Api test Suite', function(){
         
     })
 
-    it('Post Assignment', async ()=>{
+    it.only('Post Assignment', async ()=>{
         Chai.request.agent(api)
             .post('/assignment')
             .send({ name: 'Assignment', customer: 'Kawasaki' })

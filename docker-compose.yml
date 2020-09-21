@@ -1,0 +1,31 @@
+version: '3'
+services:
+    api:
+        container_name: api-getters
+        build: .
+        ports: 
+            - 4000:4000  
+        environment: 
+            MONGODB_URL : 'mongodb://gestta:12345@mongodb:27017/Assignment'
+        
+        depends_on: 
+            - mongodb 
+        
+        command: ["./wait-for-it/wait-for-it.sh", "mongodb:27017", "--", "npm", "start", "api.js"]
+        
+
+        links: 
+            - mongodb
+
+    mongodb:
+        container_name: "mongodb"
+        image: mongo
+        volumes:
+            - ./mongoInit.js:/docker-entrypoint-initdb.d/mongoInit.js
+        ports: 
+            - 27017:27017
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: admin
+            MONGO_INITDB_ROOT_PASSWORD: 12345
+            
+       

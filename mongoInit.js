@@ -1,0 +1,1 @@
+db.getSiblingDB('Assignment').createUser({user: 'gestta', pwd: '12345', roles: [{role: 'readWrite', db: 'Assignment'}]})

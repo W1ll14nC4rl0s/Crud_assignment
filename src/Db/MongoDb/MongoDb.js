@@ -19,7 +19,7 @@ class MongoDb extends Crud{
 
     static  Connect(){
         
-        Mongoose.connect('mongodb://gestta:12345@localhost:27017/Assignment',//process.env.MONGODB_URL,
+        Mongoose.connect(process.env.MONGODB_URL,
          {useUnifiedTopology: true, useNewUrlParser:true}, (error)=>{
              if(!error)return;
              console.log('Falha na conexão', error)
